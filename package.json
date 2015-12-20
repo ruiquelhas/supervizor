@@ -1,0 +1,41 @@
+{
+  "name": "supervizor",
+  "version": "0.0.1",
+  "description": "Server-level request payload validation for hapi",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "lab -a code -t 100 -L",
+    "test-tap": "lab -a code -r tap -o tests.tap",
+    "test-cov-html": "lab -a code -r html -o coverage.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruiquelhas/supervizor.git"
+  },
+  "keywords": [
+    "hapi",
+    "joi",
+    "payload",
+    "request",
+    "validation"
+  ],
+  "author": "Rui Quelhas <rfpquelhas@gmail.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/ruiquelhas/supervizor/issues"
+  },
+  "homepage": "https://github.com/ruiquelhas/supervizor#readme",
+  "devDependencies": {
+    "code": "2.x.x",
+    "hapi": "11.x.x",
+    "lab": "8.x.x"
+  },
+  "dependencies": {
+    "boom": "3.x.x",
+    "lodash.omit": "3.x.x",
+    "lodash.pluck": "3.x.x"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  }
+}
