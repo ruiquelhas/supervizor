@@ -48,7 +48,7 @@ const plugin = {
             }
 
             // Be good to yourself and allow further validation.
-            return next(null, payload);
+            next(null, payload);
         });
     }
 };
