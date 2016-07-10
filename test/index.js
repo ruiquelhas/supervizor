@@ -93,7 +93,7 @@ lab.experiment('supervizor', () => {
 
             Code.expect(response.statusCode).to.equal(200);
             Code.expect(response.headers['content-validation']).to.equal('success');
-            Code.expect(response.result).to.deep.equal(payload);
+            Code.expect(response.result).to.equal(payload);
             done();
         });
     });
