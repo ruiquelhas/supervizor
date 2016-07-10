@@ -18,7 +18,7 @@ $ npm install supervizor
 
 ## Usage
 
-Register the package as a server plugin and provide a validation function via `options` that will be attached to each route.
+Register the package as a server plugin and provide a validation function via the `options` that will be attached to each route.
 
 If the validation fails, a [joi](https://github.com/hapijs/joi)-like `400 Bad Request` error is returned alongside an additional `content-validation: failure` response header. If everything is ok, the response will ultimately contain a `content-validation: success` header.
 
@@ -37,17 +37,16 @@ const plugin = {
     register: Supervizor,
     options: {
         validator: (payload, options, next) => {
-
             // In this example, the payload must contain `valid: true`.
             if (!payload.valid) {
-                // Be good to others and provide details about the issue.
+                // Be nice to everyone and provide details about the issue.
                 const error = new Error('invalid payload');
                 error.details = [{ path: 'valid' }];
 
                 return next(error);
             }
 
-            // Be good to yourself and allow further validation.
+            // Be nice to yourself and allow further validation.
             next(null, payload);
         });
     }
