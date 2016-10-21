@@ -1,6 +1,6 @@
 {
   "name": "supervizor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Server-level request payload validation for hapi",
   "main": "lib/index.js",
   "scripts": {
