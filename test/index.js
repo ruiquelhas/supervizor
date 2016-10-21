@@ -89,7 +89,7 @@ lab.experiment('supervizor', () => {
 
         const payload = { valid: true };
 
-        server.inject({ method: 'POST', url: '/', payload: payload }, (response) => {
+        server.inject({ method: 'POST', url: '/', payload }, (response) => {
 
             Code.expect(response.statusCode).to.equal(200);
             Code.expect(response.headers['content-validation']).to.equal('success');
