@@ -25,9 +25,15 @@ lab.experiment('supervizor', () => {
                         return next();
                     }
 
-                    if (!payload.valid) {
+                    if (!payload.valid && !payload.empty) {
                         const error = new Error('invalid payload');
                         error.details = [{ path: 'valid' }];
+
+                        return next(error);
+                    }
+
+                    if (!payload.valid && payload.empty) {
+                        const error = new Error('empty payload');
 
                         return next(error);
                     }
@@ -72,7 +78,7 @@ lab.experiment('supervizor', () => {
 
     lab.test('should return an error if the request content is not valid', (done) => {
 
-        server.inject({ method: 'POST', url: '/', payload: { valid: false } }, (response) => {
+        server.inject({ method: 'POST', url: '/', payload: { valid: false, empty: false } }, (response) => {
 
             Code.expect(response.statusCode).to.equal(400);
             Code.expect(response.headers['content-validation']).to.equal('failure');
@@ -81,6 +87,21 @@ lab.experiment('supervizor', () => {
             Code.expect(response.result.validation).to.include(['source', 'keys']);
             Code.expect(response.result.validation.source).to.equal('payload');
             Code.expect(response.result.validation.keys).to.include('valid');
+            done();
+        });
+    });
+
+    lab.test('should return an error if the request content is not valid and the payload is empty', (done) => {
+
+        server.inject({ method: 'POST', url: '/', payload: { valid: false, empty: true } }, (response) => {
+
+            Code.expect(response.statusCode).to.equal(400);
+            Code.expect(response.headers['content-validation']).to.equal('failure');
+            Code.expect(response.result).to.include(['message', 'validation']);
+            Code.expect(response.result.message).to.equal('empty payload');
+            Code.expect(response.result.validation).to.include(['source', 'keys']);
+            Code.expect(response.result.validation.source).to.equal('payload');
+            Code.expect(response.result.validation.keys).to.be.empty();
             done();
         });
     });
