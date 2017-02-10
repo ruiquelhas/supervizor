@@ -1,5 +1,12 @@
 # Changelog
 
+## [v1.0.4](https://github.com/ruiquelhas/supervizor/tree/v1.0.4) (2017-02-10)
+[Full Changelog](https://github.com/ruiquelhas/supervizor/compare/v1.0.3...v1.0.4)
+
+**Merged pull requests:**
+
+- Update dependencies [\#6](https://github.com/ruiquelhas/supervizor/pull/6) ([ruiquelhas](https://github.com/ruiquelhas))
+
 ## [v1.0.3](https://github.com/ruiquelhas/supervizor/tree/v1.0.3) (2016-10-21)
 [Full Changelog](https://github.com/ruiquelhas/supervizor/compare/v1.0.2...v1.0.3)
 
