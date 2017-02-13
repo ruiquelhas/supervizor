@@ -3,6 +3,9 @@
   "version": "1.0.4",
   "description": "Server-level request payload validation for hapi",
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "changelog": "github_changelog_generator --header-label='# Changelog'",
     "coveralls": "lab -r lcov | ./node_modules/.bin/coveralls",
@@ -34,9 +37,7 @@
     "lab": "12.x.x"
   },
   "dependencies": {
-    "boom": "4.x.x",
-    "lodash.omit": "4.x.x",
-    "lodash.pluck": "3.x.x"
+    "boom": "4.x.x"
   },
   "engines": {
     "node": ">=4.0.0"
