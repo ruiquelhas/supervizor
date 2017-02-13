@@ -1,5 +1,12 @@
 # Changelog
 
+## [v1.0.5](https://github.com/ruiquelhas/supervizor/tree/v1.0.5) (2017-02-13)
+[Full Changelog](https://github.com/ruiquelhas/supervizor/compare/v1.0.4...v1.0.5)
+
+**Merged pull requests:**
+
+- Shrink package [\#7](https://github.com/ruiquelhas/supervizor/pull/7) ([ruiquelhas](https://github.com/ruiquelhas))
+
 ## [v1.0.4](https://github.com/ruiquelhas/supervizor/tree/v1.0.4) (2017-02-10)
 [Full Changelog](https://github.com/ruiquelhas/supervizor/compare/v1.0.3...v1.0.4)
 
