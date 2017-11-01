@@ -1,7 +1,7 @@
 # supervizor
 Server-level request payload validation for [hapi](https://github.com/hapijs/hapi).
 
-[![NPM Version][fury-img]][fury-url] [![Build Status][travis-img]][travis-url] [![Coverage Status][coveralls-img]][coveralls-url] [![Dependencies][david-img]][david-url]
+[![NPM Version][version-img]][version-url] [![Build Status][travis-img]][travis-url] [![Coverage Status][coveralls-img]][coveralls-url] [![Dependencies][david-img]][david-url] [![Dev Dependencies][david-dev-img]][david-dev-url]
 
 ## Table of Contents
 
@@ -64,11 +64,13 @@ server.register(plugin, (err) => {
 });
 ```
 
-[coveralls-img]: https://coveralls.io/repos/ruiquelhas/supervizor/badge.svg
+[coveralls-img]: https://img.shields.io/coveralls/ruiquelhas/supervizor.svg?style=flat-square
 [coveralls-url]: https://coveralls.io/github/ruiquelhas/supervizor
-[david-img]: https://david-dm.org/ruiquelhas/supervizor.svg
+[david-img]: https://img.shields.io/david/ruiquelhas/supervizor.svg?style=flat-square
 [david-url]: https://david-dm.org/ruiquelhas/supervizor
-[fury-img]: https://badge.fury.io/js/supervizor.svg
-[fury-url]: https://badge.fury.io/js/supervizor
-[travis-img]: https://travis-ci.org/ruiquelhas/supervizor.svg
+[david-dev-img]: https://img.shields.io/david/dev/ruiquelhas/supervizor.svg?style=flat-square
+[david-dev-url]: https://david-dm.org/ruiquelhas/supervizor?type=dev
+[version-img]: https://img.shields.io/npm/v/supervizor.svg?style=flat-square
+[version-url]: https://www.npmjs.com/package/supervizor
+[travis-img]: https://img.shields.io/travis/ruiquelhas/supervizor.svg?style=flat-square
 [travis-url]: https://travis-ci.org/ruiquelhas/supervizor
