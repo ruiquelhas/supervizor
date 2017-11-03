@@ -28,40 +28,35 @@ If the validation fails, a [joi](https://github.com/hapijs/joi)-like `400 Bad Re
 const Hapi = require('hapi');
 const Supervizor = require('supervizor');
 
-server = new Hapi.Server();
-server.connection({
-    // go nuts
-});
-
 const plugin = {
-    register: Supervizor,
+    plugin: Supervizor,
     options: {
-        validator: (payload, options, next) => {
+        validator: (payload) => {
             // In this example, the payload must contain `valid: true`.
             if (!payload.valid) {
                 // Be nice to everyone and provide details about the issue.
+                // protip: https://github.com/hapijs/joi/blob/v13.0.1/API.md#errors
                 const error = new Error('invalid payload');
-                error.details = [{ path: 'valid' }];
+                error.details = [{ path: ['valid'] }];
 
-                return next(error);
+                throw error;
             }
 
             // Be nice to yourself and allow further validation.
-            next(null, payload);
-        });
+            return payload;
+        }
     }
 };
 
-server.register(plugin, (err) => {
+try {
+    const server = new Hapi.Server();
 
-    if (err) {
-        throw err;
-    }
-
-    server.start(() => {
-        // go nuts
-    });
-});
+    await server.register(plugin);
+    await server.start();
+}
+catch (err) {
+    throw err;
+}
 ```
 
 [coveralls-img]: https://img.shields.io/coveralls/ruiquelhas/supervizor.svg?style=flat-square
