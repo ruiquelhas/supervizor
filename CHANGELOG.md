@@ -1,5 +1,16 @@
 # Changelog
 
+## [v2.0.0](https://github.com/ruiquelhas/supervizor/tree/v2.0.0) (2017-11-07)
+[Full Changelog](https://github.com/ruiquelhas/supervizor/compare/v1.0.6...v2.0.0)
+
+**Closed issues:**
+
+- Add support for hapi v17 [\#9](https://github.com/ruiquelhas/supervizor/issues/9)
+
+**Merged pull requests:**
+
+- Add support for hapi v17 [\#10](https://github.com/ruiquelhas/supervizor/pull/10) ([ruiquelhas](https://github.com/ruiquelhas))
+
 ## [v1.0.6](https://github.com/ruiquelhas/supervizor/tree/v1.0.6) (2017-11-01)
 [Full Changelog](https://github.com/ruiquelhas/supervizor/compare/v1.0.5...v1.0.6)
 
