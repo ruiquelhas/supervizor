@@ -1,5 +1,13 @@
 # Changelog
 
+## [v2.1.0](https://github.com/ruiquelhas/supervizor/tree/v2.1.0) (2017-11-11)
+[Full Changelog](https://github.com/ruiquelhas/supervizor/compare/v2.0.0...v2.1.0)
+
+**Implemented enhancements:**
+
+- Support async validators [\#11](https://github.com/ruiquelhas/supervizor/issues/11)
+- Add support for asynchronous validators [\#12](https://github.com/ruiquelhas/supervizor/pull/12) ([ruiquelhas](https://github.com/ruiquelhas))
+
 ## [v2.0.0](https://github.com/ruiquelhas/supervizor/tree/v2.0.0) (2017-11-07)
 [Full Changelog](https://github.com/ruiquelhas/supervizor/compare/v1.0.6...v2.0.0)
 
