@@ -18,7 +18,7 @@ lab.experiment('supervizor', () => {
         const setup = {
             plugin: Supervizor,
             options: {
-                validator: (payload, options) => {
+                validator: async (payload) => {
 
                     if (Object.keys(payload).length === 0) {
                         return;
@@ -37,7 +37,7 @@ lab.experiment('supervizor', () => {
                         throw error;
                     }
 
-                    return payload;
+                    return await Promise.resolve(payload);
                 }
             }
         };

@@ -7,7 +7,8 @@ Server-level request payload validation for [hapi](https://github.com/hapijs/hap
 
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Example](#example)
+  - [Synchronous validation](#synchronous-validation)
+  - [Asynchronous validation](#asynchronous-validation)
 
 ## Installation
 Install via [NPM](https://www.npmjs.org).
@@ -22,7 +23,7 @@ Register the package as a server plugin and provide a validation function via th
 
 If the validation fails, a [joi](https://github.com/hapijs/joi)-like `400 Bad Request` error is returned alongside an additional `content-validation: failure` response header. If everything is ok, the response will ultimately contain a `content-validation: success` header.
 
-### Example
+### Synchronous validation
 
 ```js
 const Hapi = require('hapi');
@@ -44,6 +45,46 @@ const plugin = {
 
             // Be nice to yourself and allow further validation.
             return payload;
+        }
+    }
+};
+
+try {
+    const server = new Hapi.Server();
+
+    await server.register(plugin);
+    await server.start();
+}
+catch (err) {
+    throw err;
+}
+```
+
+### Asynchronous validation
+
+```js
+const Hapi = require('hapi');
+const Supervizor = require('supervizor');
+
+const plugin = {
+    plugin: Supervizor,
+    options: {
+        validator: async (payload, options) => {
+            // In this example, an asychronous validation function is called.
+            try {
+                await validate(payload, options);
+
+                // Be nice to yourself and allow further validation.
+                return payload;
+            }
+            catch (err) {
+                // Be nice to everyone and provide details about the issue.
+                // protip: https://github.com/hapijs/joi/blob/v13.0.1/API.md#errors
+                const error = new Error('invalid payload');
+                error.details = [{ path: ['valid'] }];
+
+                throw error;
+            }
         }
     }
 };
